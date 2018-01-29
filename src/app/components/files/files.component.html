@@ -9,6 +9,15 @@
         <adf-toolbar class="inline">
             <button
                 mat-icon-button
+                *ngIf="hasSelection(documentList.selection)"
+                title="Declare as record"
+                [app-declare-record]="documentList.selection"
+                (selection-declare-record)="refresh()">
+                <mat-icon>mood</mat-icon>
+            </button>
+
+            <button
+                mat-icon-button
                 *ngIf="canPreviewFile(documentList.selection)"
                 title="{{ 'APP.ACTIONS.VIEW' | translate }}"
                 (click)="showPreview(documentList.selection[0]?.entry)">

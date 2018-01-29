@@ -38,6 +38,7 @@ import { DownloadFileDirective } from './directives/node-download.directive';
 import { NodeRestoreDirective } from './directives/node-restore.directive';
 import { NodePermanentDeleteDirective } from './directives/node-permanent-delete.directive';
 import { NodeUnshareDirective } from './directives/node-unshare.directive';
+import { NodeDeclareRecordDirective } from './directives/node-declare-record.directive';
 
 import { ContentManagementService } from './services/content-management.service';
 import { BrowsingFilesService } from './services/browsing-files.service';
@@ -61,7 +62,8 @@ export function declarations() {
         DownloadFileDirective,
         NodeRestoreDirective,
         NodePermanentDeleteDirective,
-        NodeUnshareDirective 
+        NodeUnshareDirective,
+        NodeDeclareRecordDirective
     ];
 }
 

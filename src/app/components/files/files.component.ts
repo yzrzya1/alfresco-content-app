@@ -301,4 +301,8 @@ export class FilesComponent extends PageComponent implements OnInit, OnDestroy {
         }
         return false;
     }
+
+    refresh(): void {
+        this.refresh();
+    }
 }
