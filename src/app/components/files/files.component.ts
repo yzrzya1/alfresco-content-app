@@ -24,7 +24,7 @@
  */
 
 import { Observable, Subscription } from 'rxjs/Rx';
-import { Component, OnInit, OnDestroy, NgZone } from '@angular/core';
+import { Component, OnInit, OnDestroy, NgZone, HostListener, ViewChild } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { MinimalNodeEntity, MinimalNodeEntryEntity, PathElementEntity, NodePaging, PathElement } from 'alfresco-js-api';
 import {
@@ -37,17 +37,22 @@ import { ContentManagementService } from '../../common/services/content-manageme
 import { NodeActionsService } from '../../common/services/node-actions.service';
 
 import { PageComponent } from '../page.component';
+import { DocumentListComponent } from '@alfresco/adf-content-services';
 
 @Component({
     templateUrl: './files.component.html'
 })
 export class FilesComponent extends PageComponent implements OnInit, OnDestroy {
 
+    @ViewChild(DocumentListComponent)
+    documentList: DocumentListComponent;
+
     private routeData: any = {};
     isValidPath = true;
 
     private nodePath: PathElement[];
     private subscriptions: Subscription[] = [];
+    private keyboardHandled = false;
 
     sorting = [ 'modifiedAt', 'desc' ];
 
@@ -315,5 +320,29 @@ export class FilesComponent extends PageComponent implements OnInit, OnDestroy {
 
     private get prefix() {
         return this.route.snapshot.data.preferencePrefix;
+    }
+
+
+
+    @HostListener('window:keydown', ['$event'])
+    handleKeyDownEvent(event: KeyboardEvent) {
+        if (this.keyboardHandled) {
+            event.preventDefault();
+            return;
+        }
+        // Cmd+A/Ctrl+A
+        if (event.keyCode === 65 && (event.metaKey || event.ctrlKey)) {
+            this.keyboardHandled = true;
+            event.preventDefault();
+            // TODO: call DL api to select properly
+            (this.documentList.data.getRows() || []).map((row) => {
+                row.isSelected = true;
+            });
+        }
+    }
+
+    @HostListener('window:keyup', ['$event'])
+    handleKeyUpEvent(event: KeyboardEvent) {
+        this.keyboardHandled = false;
     }
 }
