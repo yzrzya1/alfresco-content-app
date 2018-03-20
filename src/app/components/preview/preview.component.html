@@ -46,5 +46,11 @@
             </button>
 
         </adf-viewer-more-actions>
+
+        <adf-viewer-extension [supportedExtensions]="['txt', 'xml', 'ts', 'java', 'js', 'html', 'ftl']">
+            <ng-template let-url="urlFileContent" let-ext="extension">
+                <app-custom-editor [url]="url" [extension]="ext"></app-custom-editor>
+            </ng-template>
+        </adf-viewer-extension>
     </adf-viewer>
 </ng-container>

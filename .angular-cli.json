@@ -41,6 +41,8 @@
       "styles": [
         "./assets/fonts/material-icons/material-icons.css",
         "./assets/fonts/muli/muli.css",
+        "../node_modules/codemirror/lib/codemirror.css",
+        "../node_modules/font-awesome/css/font-awesome.css",
         "styles.scss"
       ],
       "scripts": [

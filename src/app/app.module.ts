@@ -27,6 +27,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { TRANSLATION_PROVIDER } from '@alfresco/adf-core';
+import { NgxEditorModule } from 'ngx-editor';
 
 import { AdfModule } from './adf.module';
 import { CommonModule } from './common/common.module';
@@ -53,6 +54,7 @@ import { SidenavComponent } from './components/sidenav/sidenav.component';
 import { AboutComponent } from './components/about/about.component';
 import { LocationLinkComponent } from './components/location-link/location-link.component';
 import { EmptyFolderComponent } from './components/empty-folder/empty-folder.component';
+import { CustomEditorComponent } from './components/custom-editor/custom-editor.component';
 
 @NgModule({
     imports: [
@@ -63,7 +65,8 @@ import { EmptyFolderComponent } from './components/empty-folder/empty-folder.com
         }),
         AdfModule,
         CommonModule,
-        MaterialModule
+        MaterialModule,
+        NgxEditorModule
     ],
     declarations: [
         AppComponent,
@@ -84,7 +87,8 @@ import { EmptyFolderComponent } from './components/empty-folder/empty-folder.com
         PreviewComponent,
         AboutComponent,
         LocationLinkComponent,
-        EmptyFolderComponent
+        EmptyFolderComponent,
+        CustomEditorComponent
     ],
     providers: [
         {
