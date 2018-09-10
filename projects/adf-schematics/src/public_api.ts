@@ -1,5 +1,2 @@
-/*
- * Public API Surface of adf-schematics
- */
-
-export * from './module';
+export * from './module.api';
+export * from './asset.api';
