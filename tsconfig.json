@@ -30,6 +30,12 @@
       ],
       "@alfresco/adf-extensions/*": [
         "dist/@alfresco/adf-extensions/*"
+      ],
+      "@alfresco/adf-schematics": [
+        "dist/@alfresco/adf-schematics"
+      ],
+      "@alfresco/adf-schematics/*": [
+        "dist/@alfresco/adf-schematics/*"
       ]
     }
   },
