@@ -47,6 +47,7 @@ import { ContentManagementService } from './services/content-management.service'
 import { NodeActionsService } from './services/node-actions.service';
 import { NodePermissionService } from './services/node-permission.service';
 import { ProfileResolver } from './services/profile.resolver';
+import { RepositoryStatusResolver } from './services/repository-status.resolver';
 import { ExperimentalGuard } from './services/experimental-guard.service';
 
 import { AppStoreModule } from './store/app-store.module';
@@ -70,6 +71,7 @@ import { AppSearchInputModule } from './components/search/search-input.module';
 import { AppSearchResultsModule } from './components/search/search-results.module';
 import { AppLoginModule } from './components/login/login.module';
 import { AppAuthGuard } from './guards/auth.guard';
+import { AppGuardFactory } from './guards/guard.factory';
 
 @NgModule({
   imports: [
@@ -120,11 +122,13 @@ import { AppAuthGuard } from './guards/auth.guard';
         source: 'assets'
       }
     },
+    ...AppGuardFactory.guards,
     AppAuthGuard,
     ContentManagementService,
     NodeActionsService,
     NodePermissionService,
     ProfileResolver,
+    RepositoryStatusResolver,
     ExperimentalGuard,
     ContentApiService
   ],
