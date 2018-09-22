@@ -32,6 +32,7 @@ export const SET_LANGUAGE_PICKER = 'SET_LANGUAGE_PICKER';
 export const SET_CURRENT_FOLDER = 'SET_CURRENT_FOLDER';
 export const SET_CURRENT_URL = 'SET_CURRENT_URL';
 export const SET_USER_PROFILE = 'SET_USER_PROFILE';
+export const SET_REPOSITORY_STATUS = 'SET_REPOSITORY_STATUS';
 export const TOGGLE_INFO_DRAWER = 'TOGGLE_INFO_DRAWER';
 export const TOGGLE_DOCUMENT_DISPLAY_MODE = 'TOGGLE_DOCUMENT_DISPLAY_MODE';
 
@@ -68,4 +69,9 @@ export class ToggleInfoDrawerAction implements Action {
 export class ToggleDocumentDisplayMode implements Action {
   readonly type = TOGGLE_DOCUMENT_DISPLAY_MODE;
   constructor(public payload?: any) {}
+}
+
+export class SetRepositoryStatus implements Action {
+  readonly type = SET_REPOSITORY_STATUS;
+  constructor(public payload: any) {}
 }
