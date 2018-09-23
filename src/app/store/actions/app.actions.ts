@@ -71,7 +71,7 @@ export class ToggleDocumentDisplayMode implements Action {
   constructor(public payload?: any) {}
 }
 
-export class SetRepositoryStatus implements Action {
+export class SetRepositoryStatusAction implements Action {
   readonly type = SET_REPOSITORY_STATUS;
   constructor(public payload: any) {}
 }
