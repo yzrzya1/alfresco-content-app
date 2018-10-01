@@ -6,8 +6,7 @@
     "plugin1.json",
     "dev.tools.json",
     "app.header.json",
-    "app.create.json",
-    "metadata-plugin.json"
+    "app.create.json"
   ],
 
   "rules": [
@@ -863,6 +862,7 @@
           {
             "id": "app.content.metadata.renditionedGroup",
             "title": "Renditioned",
+            "disabled": true,
             "items": [
               {
                 "id": "app.content.metadata.renditionedAspect",
@@ -874,6 +874,7 @@
           {
             "id": "app.content.metadata.qshareGroup",
             "title": "qshare:shared",
+            "disabled": true,
             "items": [
               {
                 "id": "app.content.metadata.qshareAspect",
@@ -885,6 +886,7 @@
           {
             "id": "app.content.metadata.versionableGroup",
             "title": "Versionable",
+            "disabled": true,
             "items": [
               {
                 "id": "app.content.metadata.versionableAspect",
@@ -896,6 +898,7 @@
           {
             "id": "app.content.metadata.copiedfromGroup",
             "title": "Copied From",
+            "disabled": true,
             "items": [
               {
                 "id": "app.content.metadata.copiedfromAspect",
@@ -918,6 +921,7 @@
           {
             "id": "app.content.metadata.auditableGroup",
             "title": "Auditable",
+            "disabled": true,
             "items": [
               {
                 "id": "app.content.metadata.auditableAspect",
@@ -940,6 +944,7 @@
           {
             "id": "app.content.metadata.thumbnailModificationGroup",
             "title": "Thumbnail Modification Data",
+            "disabled": true,
             "items": [
               {
                 "id": "app.content.metadata.thumbnailModificationAspect",
@@ -962,6 +967,7 @@
           {
             "id": "app.content.metadata.contentGroup",
             "title": "Content",
+            "disabled": true,
             "items": [
               {
                 "id": "app.content.metadata.contentAspect",
