@@ -6,8 +6,7 @@
     "plugin1.json",
     "dev.tools.json",
     "app.header.json",
-    "app.create.json",
-    "metadata-plugin.json"
+    "app.create.json"
   ],
 
   "rules": [
@@ -861,30 +860,117 @@
         "id": "app.content.metadata.custom",
         "custom": [
           {
-            "id": "app.content.metadata.customGroup",
+            "id": "app.content.metadata.renditionedGroup",
+            "title": "Renditioned",
+            "items": [
+              {
+                "id": "app.content.metadata.renditionedAspect",
+                "aspect": "rn:renditioned",
+                "properties": "*"
+              }
+            ]
+          },
+          {
+            "id": "app.content.metadata.qshareGroup",
+            "title": "qshare:shared",
+            "items": [
+              {
+                "id": "app.content.metadata.qshareAspect",
+                "aspect": "qshare:shared",
+                "properties": "*"
+              }
+            ]
+          },
+          {
+            "id": "app.content.metadata.versionableGroup",
+            "title": "Versionable",
+            "items": [
+              {
+                "id": "app.content.metadata.versionableAspect",
+                "aspect": "cm:versionable",
+                "properties": "*"
+              }
+            ]
+          },
+          {
+            "id": "app.content.metadata.copiedfromGroup",
+            "title": "Copied From",
+            "items": [
+              {
+                "id": "app.content.metadata.copiedfromAspect",
+                "aspect": "cm:copiedfrom",
+                "properties": "*"
+              }
+            ]
+          },
+          {
+            "id": "app.content.metadata.titledGroup",
+            "title": "Titled",
+            "items": [
+              {
+                "id": "app.content.metadata.titledAspect",
+                "aspect": "cm:titled",
+                "properties": "*"
+              }
+            ]
+          },
+          {
+            "id": "app.content.metadata.auditableGroup",
+            "title": "Auditable",
+            "items": [
+              {
+                "id": "app.content.metadata.auditableAspect",
+                "aspect": "cm:auditable",
+                "properties": "*"
+              }
+            ]
+          },
+          {
+            "id": "app.content.metadata.authorGroup",
+            "title": "Author",
+            "items": [
+              {
+                "id": "app.content.metadata.authorAspect",
+                "aspect": "cm:author",
+                "properties": "*"
+              }
+            ]
+          },
+          {
+            "id": "app.content.metadata.thumbnailModificationGroup",
+            "title": "Thumbnail Modification Data",
+            "items": [
+              {
+                "id": "app.content.metadata.thumbnailModificationAspect",
+                "aspect": "cm:thumbnailModification",
+                "properties": "*"
+              }
+            ]
+          },
+          {
+            "id": "app.content.metadata.exifGroup",
             "title": "APP.CONTENT_METADATA.EXIF_GROUP_TITLE",
             "items": [
               {
                 "id": "app.content.metadata.exifAspect",
                 "aspect": "exif:exif",
-                "properties": [
-                  "exif:pixelXDimension",
-                  "exif:pixelYDimension",
-                  "exif:dateTimeOriginal",
-                  "exif:exposureTime",
-                  "exif:fNumber",
-                  "exif:flash",
-                  "exif:focalLength",
-                  "exif:isoSpeedRatings",
-                  "exif:orientation",
-                  "exif:manufacturer",
-                  "exif:model",
-                  "exif:software"
-                ]
+                "properties": "*"
+              }
+            ]
+          },
+          {
+            "id": "app.content.metadata.contentGroup",
+            "title": "Content",
+            "items": [
+              {
+                "id": "app.content.metadata.contentAspect",
+                "aspect": "cm:content",
+                "properties": "*"
               }
             ]
           }
-        ]
+        ],
+        "custom2": "*"
       }
     ]
   }
