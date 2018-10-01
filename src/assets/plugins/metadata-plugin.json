@@ -9,39 +9,32 @@
         "id": "app.content.metadata.custom",
         "custom": [
           {
-            "id": "app.content.metadata.customGroup",
-            "title": "testing extension props",
-            "items": [
-              {
-                "id": "app.content.metadata.exifAspect",
-                "disabled": true
-              },
-              {
-                "id": "app.content.metadata.exifAspect2",
-                "aspect": "exif:exif",
-                "properties": [
-                  "exif:orientation",
-                  "exif:manufacturer",
-                  "exif:model",
-                  "exif:software"
-                ]
-              }
-            ]
+            "id": "app.content.metadata.renditionedGroup",
+            "disabled": true
           },
           {
-            "id": "app.content.metadata.customGroup2",
-            "title": "testing extension props2",
-            "items": [
-              {
-                "id": "app.content.metadata.exifAspect",
-                "aspect": "exif:exif",
-                "properties": [
-                  "exif:pixelXDimension",
-                  "exif:pixelYDimension",
-                  "exif:dateTimeOriginal"
-                ]
-              }
-            ]
+            "id": "app.content.metadata.qshareGroup",
+            "disabled": true
+          },
+          {
+            "id": "app.content.metadata.versionableGroup",
+            "disabled": true
+          },
+          {
+            "id": "app.content.metadata.copiedfromGroup",
+            "disabled": true
+          },
+          {
+            "id": "app.content.metadata.auditableGroup",
+            "disabled": true
+          },
+          {
+            "id": "app.content.metadata.thumbnailModificationGroup",
+            "disabled": true
+          },
+          {
+            "id": "app.content.metadata.contentGroup",
+            "disabled": true
           }
         ]
       },
