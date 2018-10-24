@@ -27,20 +27,7 @@ To get help on Angular CLI use ng help or read the [Angular CLI README](https://
 Isuses can be raised in GitHub or in the Alfresco JIRA project. 
 Please include a clear description, steps to reproduce and screenshots where appropriate.All issues will be reviewed; bugs will be categorized if reproducible and enhancement/feature suggestions will be considered against existing priorities if the use case serves a general-purpose need.
 
-#### Features added in the latest release
-* Application Extensibility - Phase 2 
-  * Document list presets
-  * File viewer actions
-  * Create menu button
-  * Application header
-  * Metadata card configuration
-  * see [Documentation](https://alfresco.github.io/alfresco-content-app/#/extending) for details.
-* Sharing Files
-  * Set expiry date for shared links
-  * Right click action to access shared link settings
-  * Automatic disable of sharing based on respository configuration
-
-Please refer to the [release notes](https://github.com/Alfresco/alfresco-content-app/releases) for details of all changes.
+Please refer to the [release notes](https://github.com/Alfresco/alfresco-content-app/releases) for details of all changes included in the latest release.
 
 #### High level features planned for H2 2018 (July - December)
 * Library Management
