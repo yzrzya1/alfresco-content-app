@@ -21,7 +21,7 @@
   },
   "experimental": {},
   "headerColor": "#2196F3",
-  "languagePicker": false,
+  "languagePicker": true,
   "pagination": {
     "size": 25,
     "supportedPageSizes": [25, 50, 100]
@@ -84,6 +84,10 @@
     {
       "key": "zh-CN",
       "label": "Simplified Chinese"
+    },
+    {
+      "key": "is",
+      "label": "Icelandic"
     }
   ],
   "content-metadata": {
