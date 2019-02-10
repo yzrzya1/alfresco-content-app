@@ -11,35 +11,20 @@
   <app-page-layout-content>
     <div class="main-content">
       <div class="adf-search-results">
-        <adf-search-filter
-          #searchFilter
-          [ngClass]="{ 'adf-search-filter--hidden': hideSearchFilter() }"
-        ></adf-search-filter>
+        <adf-search-filter #searchFilter [ngClass]="{ 'adf-search-filter--hidden': hideSearchFilter() }">
+        </adf-search-filter>
         <div class="adf-search-results__content">
-          <mat-progress-bar
-            *ngIf="isLoading"
-            color="primary"
-            mode="indeterminate"
-          >
+          <mat-progress-bar *ngIf="isLoading" color="primary" mode="indeterminate">
           </mat-progress-bar>
-          <div
-            class="adf-search-results__content-header content"
-            *ngIf="data?.list.entries.length"
-          >
+          <div class="adf-search-results__content-header content" *ngIf="data?.list.entries.length">
             <div class="content__side--left">
-              <div
-                class="adf-search-results--info-text"
-                *ngIf="totalResults !== 1"
-              >
+              <div class="adf-search-results--info-text" *ngIf="totalResults !== 1">
                 {{
                   'APP.BROWSE.SEARCH.FOUND_RESULTS'
                     | translate: { number: totalResults }
                 }}
               </div>
-              <div
-                class="adf-search-results--info-text"
-                *ngIf="totalResults === 1"
-              >
+              <div class="adf-search-results--info-text" *ngIf="totalResults === 1">
                 {{
                   'APP.BROWSE.SEARCH.FOUND_ONE_RESULT'
                     | translate: { number: totalResults }
@@ -47,42 +32,24 @@
               </div>
 
               <div class="adf-search-results__facets">
-                <adf-search-chip-list
-                  [searchFilter]="searchFilter"
-                ></adf-search-chip-list>
+                <adf-search-chip-list [searchFilter]="searchFilter"></adf-search-chip-list>
               </div>
             </div>
 
-            <adf-search-sorting-picker
-              class="content__side--right"
-            ></adf-search-sorting-picker>
+            <adf-search-sorting-picker class="content__side--right"></adf-search-sorting-picker>
           </div>
 
-          <adf-document-list
-            #documentList
-            acaDocumentList
-            acaContextActions
-            [showHeader]="false"
-            [selectionMode]="'multiple'"
-            [sortingMode]="'server'"
-            [sorting]="sorting"
-            [node]="data"
-            (node-dblclick)="onNodeDoubleClick($event.detail?.node)"
-          >
+          <adf-document-list #documentList acaDocumentList acaContextActions [thumbnails]="true" [display]="'gallery'"
+            [showHeader]="false" [showHeader]="false" [selectionMode]="'multiple'" [sortingMode]="'server'"
+            [sorting]="sorting" [node]="data" (node-dblclick)="onNodeDoubleClick($event.detail?.node)">
             <data-columns>
-              <data-column
-                [key]="'$thumbnail'"
-                [type]="'image'"
-                [sr-title]="'ADF-DOCUMENT-LIST.LAYOUT.THUMBNAIL'"
-                [sortable]="false"
-              >
+              <data-column [key]="'$thumbnail'" [type]="'image'" [sr-title]="'ADF-DOCUMENT-LIST.LAYOUT.THUMBNAIL'"
+                [sortable]="false">
               </data-column>
 
               <data-column key type="text">
                 <ng-template let-context>
-                  <aca-search-results-row
-                    [context]="context"
-                  ></aca-search-results-row>
+                  <aca-search-results-row [context]="context"></aca-search-results-row>
                 </ng-template>
               </data-column>
             </data-columns>
@@ -98,12 +65,8 @@
             </adf-custom-empty-content-template>
           </adf-document-list>
 
-          <adf-pagination
-            *ngIf="!documentList.isEmpty()"
-            acaPagination
-            [target]="documentList"
-            (change)="onPaginationChanged($event)"
-          >
+          <adf-pagination *ngIf="!documentList.isEmpty()" acaPagination [target]="documentList"
+            (change)="onPaginationChanged($event)">
           </adf-pagination>
         </div>
       </div>

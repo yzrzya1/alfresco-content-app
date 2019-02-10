@@ -213,7 +213,7 @@
       { "query": "-PNAME:'0/wiki'" }
     ],
     "facetFields": {
-      "expanded": true,
+      "expanded": false,
       "fields": [
         {
           "field": "content.mimetype",
@@ -238,25 +238,20 @@
       ]
     },
     "facetQueries": {
-      "label": "SEARCH.CATEGORIES.MODIFIED_DATE",
+      "expanded": true,
+      "label": "Object Recognition",
       "queries": [
-        { "label": "Today", "query": "cm:modified:[TODAY to TODAY]" },
-        {
-          "label": "This week",
-          "query": "cm:modified:[NOW/DAY-7DAYS TO NOW/DAY+1DAY]"
-        },
-        {
-          "label": "This month",
-          "query": "cm:modified:[NOW/DAY-1MONTH TO NOW/DAY+1DAY]"
-        },
-        {
-          "label": "In last 6 months",
-          "query": "cm:modified:[NOW/DAY-6MONTHS TO NOW/DAY+1DAY]"
-        },
-        {
-          "label": "This year",
-          "query": "cm:modified:[NOW/DAY-1YEAR TO NOW/DAY+1DAY]"
-        }
+        { "label": "Animals", "query": "(cm:description:\"dog\" OR cm:description:\"*cat*\" OR cm:description:\"*giraffe*\" OR cm:description:\"*bird*\" OR cm:description:\"*horse*\"  OR cm:description:\"*sheep*\" OR cm:description:\"*elephant*\" OR cm:description:\"*zebra*\" OR cm:description:\"*bear*\") AND (content.mimetype:\"image/jpeg\")"},
+        { "label": "Fruits", "query":  "(cm:description:\"*banana*\" OR cm:description:\"*apple*\" OR cm:description:\"*orange*\") AND (content.mimetype:\"image/jpeg\")" },
+        { "label": "Foods", "query":  "(cm:description:\"*pizza*\" OR cm:description:\"*hot dog*\" OR cm:description:\"*sandwich*\") AND (content.mimetype:\"image/jpeg\") " },
+        { "label": "Vegetables", "query":  "(cm:description:\"*broccoli*\" OR cm:description:\"*carrot*\") AND (content.mimetype:\"image/jpeg\")" },
+        { "label": "Desserts", "query":  "(cm:description:\"*donut*\" OR cm:description:\"*cake*\") AND (content.mimetype:\"image/jpeg\") " },
+        { "label": "Sports", "query": "(cm:description:\"frisbee\" OR cm:description:\"*skis*\" OR cm:description:\"*snowboard*\" OR cm:description:\"*kite*\" OR cm:description:\"*baseball*\"  OR cm:description:\"*skateboard*\" OR cm:description:\"*surfboard*\" OR cm:description:\"*tennis*\") AND (content.mimetype:\"image/jpeg\")"},
+        { "label": "Vehicle", "query": "(cm:description:\"car\" OR cm:description:\"*bus*\" OR cm:description:\"*truck*\" OR cm:description:\"*train*\" OR cm:description:\"*boat*\"  OR cm:description:\"*airplane*\" OR cm:description:\"*motorcycle*\" OR cm:description:\"*tennis*\") AND (content.mimetype:\"image/jpeg\")"},
+        { "label": "Boat", "query":  "cm:description:\"*boat*\" AND (content.mimetype:\"image/jpeg\") " },
+        { "label": "Train", "query":  "cm:description:\"*train*\" AND (content.mimetype:\"image/jpeg\") " },
+        { "label": "2 Person", "query": "cm:description:\"person,person\""},
+        { "label": "Person & Bicycle", "query": "(cm:description:\"*person*\" AND cm:description:\"*bicycle*\") AND (content.mimetype:\"image/jpeg\")" }
       ]
     },
     "categories": [

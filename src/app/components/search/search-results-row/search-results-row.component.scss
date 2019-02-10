@@ -4,6 +4,14 @@
   @include flex-column;
 }
 
+.adf-data-table-card .adf-datatable-body .adf-datatable-table-cell {
+  flex: 1;
+}
+
+.adf-datatable-gallery-thumbnails .adf-data-table-card .adf-datatable-row img {
+  height: 140px;
+}
+
 .line {
   margin: 5px 0;
 }

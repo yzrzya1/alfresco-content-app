@@ -1,5 +1,11 @@
 @import 'mixins';
 
+.adf-data-table-card .adf-datatable-body .adf-datatable-table-cell {
+  text-align: left;
+  flex: 0 1 24%;
+  background-color: rebeccapurple;
+}
+
 .adf-search-results {
   @include flex-row;
 
