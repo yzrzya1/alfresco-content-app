@@ -59,6 +59,7 @@
     "@ngrx/store": "^7.2.0",
     "@ngrx/store-devtools": "^7.2.0",
     "@ngx-translate/core": "^11.0.1",
+    "alfresco-objects-recognition": "file:dist/@alfresco/alfresco-objects-recognition/alfresco-objects-recognition-0.0.1.tgz",
     "core-js": "^2.5.7",
     "hammerjs": "2.0.8",
     "minimatch-browser": "^1.0.0",

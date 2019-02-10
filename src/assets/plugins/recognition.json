@@ -1,0 +1,63 @@
+{
+  "$schema": "../../../extension.schema.json",
+  "$version": "1.0.0",
+  "$name": "Object Recognition",
+  "$description": "Object detection extension that aims to localize and identify multiple objects in a single image.",
+  "actions": [
+    {
+      "id": "plugin1.actions.recognition-settings",
+      "type": "RECOGNITION_SETTINGS",
+      "payload": "true"
+    }
+  ],
+  "features": {
+    "toolbar": [
+      {
+        "id": "recognition.toolbar.detection",
+        "order": 90,
+        "title": "DETECTION",
+        "icon": "wallpaper",
+        "actions": {
+          "click": "RECOGNITION_NODES"
+        },
+        "rules": {
+          "visible": "app.toolbar.canDownload"
+        }
+      }
+    ],
+    "viewer": {
+      "toolbarActions": [
+        {
+          "id": "recognition.viewer.toolbarAction.settingDetection",
+          "order": 90,
+          "title": "setting",
+          "icon": "settings_input_svideo",
+          "actions": {
+            "click": "plugin1.actions.recognition-settings"
+          }
+        },
+        {
+          "id": "recognition.viewer.toolbarAction.detection",
+          "order": 90,
+          "title": "DETECTION",
+          "icon": "wallpaper",
+          "actions": {
+            "click": "RECOGNITION_NODES"
+          }
+        }
+      ],
+      "content": [
+        {
+          "id": "recognition.viewer.jpg",
+          "fileExtension": "jpg",
+          "component": "app.viewer.components.imageRecognition"
+        },
+        {
+          "id": "recognition.viewer.jpg",
+          "fileExtension": "jpeg",
+          "component": "app.viewer.components.imageRecognition"
+        }
+      ]
+    }
+  }
+}
