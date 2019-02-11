@@ -11,7 +11,8 @@
 
   <app-page-layout-content>
     <div class="main-content">
-      <adf-document-list
+      <aca-node-list [data]="nodes"></aca-node-list>
+      <!-- <adf-document-list
         #documentList
         acaDocumentList
         acaContextActions
@@ -84,7 +85,7 @@
         </data-columns>
       </adf-document-list>
 
-      <adf-pagination acaPagination [target]="documentList"> </adf-pagination>
+      <adf-pagination acaPagination [target]="documentList"> </adf-pagination> -->
     </div>
   </app-page-layout-content>
 </app-page-layout>

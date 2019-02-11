@@ -79,6 +79,7 @@ import { AppNodeVersionModule } from './components/node-version/node-version.mod
 import { environment } from '../environments/environment';
 import { AppDataService } from './services/data.service';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
+import { NodeListModule } from './components/node-list/node-list.module';
 
 @NgModule({
   imports: [
@@ -114,6 +115,7 @@ import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
     AppSearchResultsModule,
     AppHeaderModule,
     AppNodeVersionModule,
+    NodeListModule,
     TranslateModule.forRoot({
       loader: { provide: TranslateLoader, useClass: TranslateLoaderService }
     })

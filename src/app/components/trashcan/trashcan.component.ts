@@ -33,6 +33,7 @@ import { AppStore } from '../../store/states/app.state';
 import { AppExtensionService } from '../../extensions/extension.service';
 import { Observable } from 'rxjs';
 import { ProfileState } from '@alfresco/adf-extensions';
+import { AlfrescoApiService } from '@alfresco/adf-core';
 
 @Component({
   templateUrl: './trashcan.component.html'
@@ -42,12 +43,14 @@ export class TrashcanComponent extends PageComponent implements OnInit {
   user$: Observable<ProfileState>;
 
   columns: any[] = [];
+  nodes: any[];
 
   constructor(
     content: ContentManagementService,
     extensions: AppExtensionService,
     store: Store<AppStore>,
-    private breakpointObserver: BreakpointObserver
+    private breakpointObserver: BreakpointObserver,
+    private apiService: AlfrescoApiService
   ) {
     super(store, extensions, content);
     this.user$ = this.store.select(selectUser);
@@ -68,5 +71,13 @@ export class TrashcanComponent extends PageComponent implements OnInit {
     );
 
     this.columns = this.extensions.documentListPresets.trashcan || [];
+    this.loadNodes();
+  }
+
+  private loadNodes() {
+    this.apiService.nodesApi.getDeletedNodes({}).then(result => {
+      const data = result.list.entries.map(node => node.entry);
+      this.nodes = data;
+    });
   }
 }

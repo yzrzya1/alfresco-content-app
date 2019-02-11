@@ -34,6 +34,7 @@ import { AppToolbarModule } from '../toolbar/toolbar.module';
 import { DirectivesModule } from '../../directives/directives.module';
 import { ContextMenuModule } from '../context-menu/context-menu.module';
 import { AppLayoutModule } from '../layout/layout.module';
+import { NodeListModule } from '../node-list/node-list.module';
 
 const routes: Routes = [
   {
@@ -56,7 +57,8 @@ const routes: Routes = [
     AppCommonModule,
     AppToolbarModule,
     ContextMenuModule,
-    AppLayoutModule
+    AppLayoutModule,
+    NodeListModule
   ],
   declarations: [TrashcanComponent],
   exports: [TrashcanComponent]
