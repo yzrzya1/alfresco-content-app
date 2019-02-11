@@ -57,6 +57,11 @@
               },
               {
                 "glob": "**/*.json",
+                "input": "node_modules/alfresco-objects-recognition/assets",
+                "output": "./assets/recognition"
+              },
+              {
+                "glob": "**/*.json",
                 "input": "projects/adf-office-services-ext/assets",
                 "output": "./assets/plugins"
               }
