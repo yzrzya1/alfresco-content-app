@@ -31,6 +31,12 @@ import { CoreModule } from '@alfresco/adf-core';
 import { RouterModule } from '@angular/router';
 import { AcaExpansionPanelDirective } from './expansion-panel.directive';
 
+import { IconListTemplateDirective } from './icon-link/icon-list-template.directive';
+import { LinkListTemplateDirective } from './link/link-list-template.directive';
+import { SidenavListComponent } from './sidenav-list.component';
+import { IconLinkItemComponent } from './icon-link/icon-link-item.component';
+import { LinkItemComponent } from './link/link-item.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -38,7 +44,24 @@ import { AcaExpansionPanelDirective } from './expansion-panel.directive';
     RouterModule,
     AppCreateMenuModule
   ],
-  declarations: [SidenavComponent, AcaExpansionPanelDirective],
-  exports: [SidenavComponent, AcaExpansionPanelDirective]
+  declarations: [
+    SidenavComponent,
+    AcaExpansionPanelDirective,
+    IconListTemplateDirective,
+    LinkListTemplateDirective,
+    SidenavListComponent,
+    IconLinkItemComponent,
+    LinkItemComponent
+  ],
+  exports: [
+    SidenavComponent,
+    AcaExpansionPanelDirective,
+    ,
+    IconListTemplateDirective,
+    LinkListTemplateDirective,
+    SidenavListComponent,
+    IconLinkItemComponent,
+    LinkItemComponent
+  ]
 })
 export class AppSidenavModule {}
