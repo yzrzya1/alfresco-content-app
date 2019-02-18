@@ -26,7 +26,6 @@
 import { NgModule } from '@angular/core';
 import { AppCreateMenuModule } from '../create-menu/create-menu.module';
 import { CommonModule } from '@angular/common';
-import { SidenavComponent } from './sidenav.component';
 import { CoreModule } from '@alfresco/adf-core';
 import { RouterModule } from '@angular/router';
 import { AcaExpansionPanelDirective } from './expansion-panel.directive';
@@ -36,6 +35,7 @@ import { LinkListTemplateDirective } from './link/link-list-template.directive';
 import { SidenavListComponent } from './sidenav-list.component';
 import { IconLinkItemComponent } from './icon-link/icon-link-item.component';
 import { LinkItemComponent } from './link/link-item.component';
+import { SidenavComponent } from './sidenav.component';
 
 @NgModule({
   imports: [
@@ -56,7 +56,6 @@ import { LinkItemComponent } from './link/link-item.component';
   exports: [
     SidenavComponent,
     AcaExpansionPanelDirective,
-    ,
     IconListTemplateDirective,
     LinkListTemplateDirective,
     SidenavListComponent,
