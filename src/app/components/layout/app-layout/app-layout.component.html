@@ -20,10 +20,23 @@
 
     <adf-sidenav-layout-navigation>
       <ng-template let-isMenuMinimized="isMenuMinimized">
-        <app-sidenav
+        <!-- <app-sidenav
           [showLabel]="!isMenuMinimized()"
           (swipeleft)="hideMenu($event)"
-        ></app-sidenav>
+        ></app-sidenav> -->
+        <app-sidenav [mode]="!isMenuMinimized() ? 'minimized' : 'maximized'">
+          <app-sidenav-list *linkList="let list" [list]="list">
+            <ng-template let-item="$implicit">
+              <app-link-item [item]="item"></app-link-item>
+            </ng-template>
+          </app-sidenav-list>
+
+          <app-sidenav-list *iconList="let list" [list]="list">
+            <ng-template let-item="$implicit">
+              <app-icon-link-item [item]="item"></app-icon-link-item>
+            </ng-template>
+          </app-sidenav-list>
+        </app-sidenav>
       </ng-template>
     </adf-sidenav-layout-navigation>
 
