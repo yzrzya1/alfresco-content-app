@@ -33,9 +33,9 @@ import { AcaExpansionPanelDirective } from './expansion-panel.directive';
 import { IconListTemplateDirective } from './icon-link/icon-list-template.directive';
 import { LinkListTemplateDirective } from './link/link-list-template.directive';
 import { SidenavListComponent } from './sidenav-list.component';
+import { SidenavComponent } from './sidenav.component';
 import { IconLinkItemComponent } from './icon-link/icon-link-item.component';
 import { LinkItemComponent } from './link/link-item.component';
-import { SidenavComponent } from './sidenav.component';
 
 @NgModule({
   imports: [
