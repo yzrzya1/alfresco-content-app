@@ -1,6 +1,6 @@
 <div class="sidenav">
   <ng-container [ngSwitch]="mode">
-    <ng-container *ngSwitchCase="'maximized'">
+    <ng-container *ngSwitchCase="'collapsed'">
       <div
         *ngFor="let group of groups; trackBy: trackById"
         class="sidenav-section"
@@ -30,7 +30,7 @@
       </div>
     </ng-container>
 
-    <ng-container *ngSwitchCase="'minimized'">
+    <ng-container *ngSwitchCase="'expanded'">
       <div
         *ngFor="let group of groups; trackBy: trackById"
         class="sidenav-section"

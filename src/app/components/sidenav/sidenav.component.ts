@@ -25,7 +25,7 @@ import { takeUntil, distinctUntilChanged, map } from 'rxjs/operators';
   host: { class: 'app-sidenav' }
 })
 export class SidenavComponent implements OnInit, OnDestroy {
-  @Input() mode: 'minimized' | 'maximized' = 'maximized';
+  @Input() mode: 'collapsed' | 'expanded' = 'expanded';
 
   // Read in our structural directives as TemplateRefs
   @ContentChild(LinkListTemplateDirective, { read: TemplateRef })
