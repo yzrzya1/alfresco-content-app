@@ -30,12 +30,14 @@ import { CoreModule } from '@alfresco/adf-core';
 import { RouterModule } from '@angular/router';
 import { AcaExpansionPanelDirective } from './expansion-panel.directive';
 
-import { IconListTemplateDirective } from './icon-link/icon-list-template.directive';
-import { LinkListTemplateDirective } from './link/link-list-template.directive';
-import { SidenavListComponent } from './sidenav-list.component';
+import { ListItemTemplateDirective } from './list-item/list-item-template.directive';
+import { IconItemTemplateDirective } from './icon-item/icon-item-template.directive';
+import { LinkItemTemplateDirective } from './link-item/link-item-template.directive';
+
+import { ItemComponent } from './list-item/item.component';
 import { SidenavComponent } from './sidenav.component';
-import { IconLinkItemComponent } from './icon-link/icon-link-item.component';
-import { LinkItemComponent } from './link/link-item.component';
+import { IconItemComponent } from './icon-item/icon-item.component';
+import { LinkItemComponent } from './link-item/link-item.component';
 
 @NgModule({
   imports: [
@@ -47,19 +49,21 @@ import { LinkItemComponent } from './link/link-item.component';
   declarations: [
     SidenavComponent,
     AcaExpansionPanelDirective,
-    IconListTemplateDirective,
-    LinkListTemplateDirective,
-    SidenavListComponent,
-    IconLinkItemComponent,
+    ListItemTemplateDirective,
+    IconItemTemplateDirective,
+    LinkItemTemplateDirective,
+    ItemComponent,
+    IconItemComponent,
     LinkItemComponent
   ],
   exports: [
     SidenavComponent,
     AcaExpansionPanelDirective,
-    IconListTemplateDirective,
-    LinkListTemplateDirective,
-    SidenavListComponent,
-    IconLinkItemComponent,
+    ListItemTemplateDirective,
+    IconItemTemplateDirective,
+    LinkItemTemplateDirective,
+    ItemComponent,
+    IconItemComponent,
     LinkItemComponent
   ]
 })

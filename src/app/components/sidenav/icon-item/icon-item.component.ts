@@ -1,13 +1,14 @@
 import { Component, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-icon-link-item',
+  selector: 'app-icon-item',
   template: `
     <mat-icon>
       {{ item.icon }}
     </mat-icon>
-  `
+  `,
+  host: { class: 'app-icon-item' }
 })
-export class IconLinkItemComponent {
+export class IconItemComponent {
   @Input() item;
 }

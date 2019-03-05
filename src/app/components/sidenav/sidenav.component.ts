@@ -7,8 +7,9 @@ import {
   ViewEncapsulation,
   OnDestroy
 } from '@angular/core';
-import { LinkListTemplateDirective } from './link/link-list-template.directive';
-import { IconListTemplateDirective } from './icon-link/icon-list-template.directive';
+import { LinkItemTemplateDirective } from './link-item/link-item-template.directive';
+import { IconItemTemplateDirective } from './icon-item/icon-item-template.directive';
+import { ListItemTemplateDirective } from './list-item/list-item-template.directive';
 import { AppExtensionService } from '../../extensions/extension.service';
 import { NavBarGroupRef } from '@alfresco/adf-extensions';
 import { Store } from '@ngrx/store';
@@ -27,11 +28,14 @@ import { takeUntil, distinctUntilChanged, map } from 'rxjs/operators';
 export class SidenavComponent implements OnInit, OnDestroy {
   @Input() mode: 'collapsed' | 'expanded' = 'expanded';
 
-  // Read in our structural directives as TemplateRefs
-  @ContentChild(LinkListTemplateDirective, { read: TemplateRef })
-  linkListTemplate;
-  @ContentChild(IconListTemplateDirective, { read: TemplateRef })
-  iconListTemplate;
+  @ContentChild(ListItemTemplateDirective, { read: TemplateRef })
+  listItemTemplate;
+
+  @ContentChild(LinkItemTemplateDirective, { read: TemplateRef })
+  linkItemTemplate;
+
+  @ContentChild(IconItemTemplateDirective, { read: TemplateRef })
+  iconItemTemplate;
 
   groups: Array<NavBarGroupRef> = [];
   private onDestroy$: Subject<boolean> = new Subject<boolean>();

@@ -7,7 +7,7 @@
   $border: 1px solid mat-color($foreground, divider, 0.07);
 
   .sidenav {
-    @include angular-material-theme($theme);
+    // @include angular-material-theme($theme);
 
     background-color: mat-color($background, background);
 
@@ -29,28 +29,44 @@
       font-size: 14px !important;
     }
 
-    .adf-sidebar-action-menu-button {
-      background-color: mat-color($accent);
+    .mat-expansion-panel-header-title span {
+      margin-left: 0 !important;
     }
+
+    // .adf-sidebar-action-menu-button {
+    //   background-color: mat-color($accent);
+    // }
 
     .section {
       border-bottom: $border;
+      // padding: 8px 14px;
     }
 
-    .item--label:not(.item--active):hover {
-      color: mat-color($foreground, text);
-    }
+    // .section__list {
+    //   display: flex;
+    //   flex-direction: column;
+    //   padding: 0;
+    //   margin: 0;
+    // }
 
-    .item--label {
-      color: mat-color($primary, 0.87);
-    }
+    // .mat-expansion-panel-header {
+    //   padding: 0 !important;
+    // }
 
-    .item--active {
-      color: mat-color($accent);
-    }
+    //   .item--label:not(.item--active):hover {
+    //     color: mat-color($foreground, text);
+    //   }
 
-    .item--default {
-      color: mat-color($primary, 0.87);
-    }
+    //   .item--label {
+    //     color: mat-color($primary, 0.87);
+    //   }
+
+    //   .item--active {
+    //     color: mat-color($accent);
+    //   }
+
+    //   .item--default {
+    //     color: mat-color($primary, 0.87);
+    //   }
   }
 }
