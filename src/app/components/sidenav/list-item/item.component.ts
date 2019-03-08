@@ -5,13 +5,15 @@ import {
   TemplateRef,
   ViewEncapsulation
 } from '@angular/core';
+import { ListItemTemplateDirective } from '../list-item/list-item-template.directive';
+
 @Component({
   selector: 'app-item',
   template: `
     <ng-container *ngIf="!item.children">
       <div class="item">
         <ng-template
-          [ngTemplateOutlet]="template"
+          [ngTemplateOutlet]="listItemTemplate"
           [ngTemplateOutletContext]="{ $implicit: item }"
         ></ng-template>
       </div>
@@ -26,7 +28,7 @@ import {
           <mat-panel-title>
             <div class="item">
               <ng-template
-                [ngTemplateOutlet]="template"
+                [ngTemplateOutlet]="listItemTemplate"
                 [ngTemplateOutletContext]="{ $implicit: item }"
               ></ng-template>
             </div>
@@ -38,7 +40,7 @@ import {
           class="item"
         >
           <ng-template
-            [ngTemplateOutlet]="template"
+            [ngTemplateOutlet]="listItemTemplate"
             [ngTemplateOutletContext]="{ $implicit: child }"
           ></ng-template>
         </div>
@@ -52,7 +54,10 @@ import {
 export class ItemComponent {
   @Input() item;
 
-  @ContentChild(TemplateRef) template: any;
+  // @ContentChild(TemplateRef) template: any;
+
+  @ContentChild(ListItemTemplateDirective, { read: TemplateRef })
+  listItemTemplate;
 
   trackById(index: number, obj: { id: string }) {
     return obj.id;

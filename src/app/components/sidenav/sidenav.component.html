@@ -1,130 +1,88 @@
 <div class="sidenav">
   <ng-container [ngSwitch]="mode">
-    <div *ngFor="let group of groups; trackBy: trackById" class="section">
-      <ng-container *ngSwitchCase="'expanded'">
-        <div
-          *ngFor="let item of group.items; trackBy: trackById"
-          class="menu_item"
-        >
-          <ng-container *ngIf="listItemTemplate">
-            <ng-template
-              [ngTemplateOutlet]="listItemTemplate"
-              [ngTemplateOutletContext]="{
-                $implicit: item
-              }"
-            >
-            </ng-template>
-          </ng-container>
-
-          <ng-container *ngIf="!listItemTemplate">
-            default
-          </ng-container>
-        </div>
-      </ng-container>
-
-      <ng-container *ngSwitchCase="'collapsed'">
-        collapsed
-      </ng-container>
-
-      <!-- <ng-container *ngSwitchCase="'expanded'">
-        <div
-          *ngFor="let item of group.items; trackBy: trackById"
-          class="menu_item"
-        >
+    <div
+      *ngFor="let group of groups; trackBy: trackById"
+      [class]="'section section--' + mode"
+    >
+      <div
+        *ngFor="let item of group.items; trackBy: trackById"
+        [class]="'menu menu--' + mode"
+      >
+        <ng-container *ngSwitchCase="'expanded'">
           <ng-container *ngIf="linkItemTemplate">
-            <ng-template
-              [ngTemplateOutlet]="linkItemTemplate"
-              [ngTemplateOutletContext]="{
-                $implicit: item
-              }"
-            >
-            </ng-template>
+            template
           </ng-container>
 
           <ng-container *ngIf="!linkItemTemplate">
-            <app-item [list]="item">
-              <ng-template let-item="$implicit">
-                <app-link-item [item]="item"></app-link-item>
-              </ng-template>
-            </app-item>
+            no template
           </ng-container>
-        </div>
-      </ng-container> -->
+        </ng-container>
 
-      <!-- <ng-container *ngSwitchCase="'collapsed'">
-        <div
-          *ngFor="let item of group.items; trackBy: trackById"
-          class="menu_item"
-        >
+        <ng-container *ngSwitchCase="'collapsed'">
           <ng-container *ngIf="iconItemTemplate">
-            <ng-template
-              [ngTemplateOutlet]="iconItemTemplate"
-              [ngTemplateOutletContext]="{
-                $implicit: item
-              }"
-            >
-            </ng-template>
+            template
           </ng-container>
 
           <ng-container *ngIf="!iconItemTemplate">
-            <app-item [list]="item">
-              <ng-template let-item="$implicit">
-                <app-icon-item [item]="item"></app-icon-item>
-              </ng-template>
-            </app-item>
+            no template
           </ng-container>
-        </div>
-      </ng-container> -->
+        </ng-container>
+      </div>
     </div>
-
-    <!-- <ng-container *ngSwitchCase="'expanded'">
-      <div *ngFor="let group of groups; trackBy: trackById" class="section">
-        <div
-          *ngFor="let item of group.items; trackBy: trackById"
-          class="menu_item"
-        >
-          <ng-container *ngIf="linkItemTemplate">
-            <ng-template
-              [ngTemplateOutlet]="linkItemTemplate"
-              [ngTemplateOutletContext]="{ $implicit: item }"
-            >
-            </ng-template>
-          </ng-container>
-
-          <ng-container *ngIf="!linkItemTemplate">
-            <app-item [list]="item">
-              <ng-template let-item="$implicit">
-                <app-link-item [item]="item"></app-link-item>
-              </ng-template>
-            </app-item>
-          </ng-container>
-        </div>
-      </div>
-    </ng-container> -->
-
-    <!-- <ng-container *ngSwitchCase="'collapsed'">
-      <div *ngFor="let group of groups; trackBy: trackById" class="section">
-        <div
-          *ngFor="let item of group.items; trackBy: trackById"
-          class="menu_item"
-        >
-          <ng-container *ngIf="iconItemTemplate">
-            <ng-template
-              [ngTemplateOutlet]="iconItemTemplate"
-              [ngTemplateOutletContext]="{ $implicit: item }"
-            >
-            </ng-template>
-          </ng-container>
-
-          <ng-container *ngIf="!iconItemTemplate">
-            <app-item [list]="item">
-              <ng-template let-item="$implicit">
-                <app-icon-item [item]="item"></app-icon-item>
-              </ng-template>
-            </app-item>
-          </ng-container>
-        </div>
-      </div>
-    </ng-container> -->
   </ng-container>
 </div>
+
+<!-- <ng-container *ngSwitchCase="'expanded'">
+      <div *ngFor="let group of groups; trackBy: trackById" class="section">
+        <div
+          *ngFor="let item of group.items; trackBy: trackById"
+          class="menu_item"
+        >
+          <ng-container *ngIf="linkItemTemplate">
+            <ng-template
+              [ngTemplateOutlet]="linkItemTemplate"
+              [ngTemplateOutletContext]="{ $implicit: item }"
+            >
+            </ng-template>
+          </ng-container>
+
+          <ng-container *ngIf="!linkItemTemplate">
+            <app-item [list]="item">
+              <ng-template let-item="$implicit">
+                <app-link-item [item]="item"></app-link-item>
+              </ng-template>
+            </app-item>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container> -->
+
+<!-- <ng-container *ngSwitchCase="'collapsed'">
+      <div *ngFor="let group of groups; trackBy: trackById" class="section">
+        <div
+          *ngFor="let item of group.items; trackBy: trackById"
+          class="menu_item"
+        >
+          <ng-container *ngIf="iconItemTemplate">
+            <ng-template
+              [ngTemplateOutlet]="iconItemTemplate"
+              [ngTemplateOutletContext]="{ $implicit: item }"
+            >
+            </ng-template>
+          </ng-container>
+
+          <ng-container *ngIf="!iconItemTemplate">
+            <app-item [list]="item">
+              <ng-template let-item="$implicit">
+                <app-icon-item [item]="item"></app-icon-item>
+              </ng-template>
+            </app-item>
+          </ng-container>
+        </div>
+      </div>
+    </ng-container> -->
+<!-- </ng-container>
+    </div>
+  </ng-container> -->
+<!-- </div> -->
+<!-- </div> -->

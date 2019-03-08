@@ -25,13 +25,13 @@
           (swipeleft)="hideMenu($event)"
         ></app-sidenav> -->
         <app-sidenav [mode]="isMenuMinimized() ? 'collapsed' : 'expanded'">
-          <!-- <div *appListItemTemplate="let item">
-            <app-item [item]="item">
-              <ng-template let-item="$implicit">
-                {{ item | json }}
-              </ng-template>
-            </app-item>
+          <!-- <div *appLinkItemTemplate="let item">
+            {{ item.order }}
           </div> -->
+
+          <div *appIconItemTemplate="let item">
+            {{ item.order }}
+          </div>
         </app-sidenav>
       </ng-template>
     </adf-sidenav-layout-navigation>

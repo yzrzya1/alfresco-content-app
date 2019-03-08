@@ -9,7 +9,7 @@ import {
 } from '@angular/core';
 import { LinkItemTemplateDirective } from './link-item/link-item-template.directive';
 import { IconItemTemplateDirective } from './icon-item/icon-item-template.directive';
-import { ListItemTemplateDirective } from './list-item/list-item-template.directive';
+// import { ListItemTemplateDirective } from './list-item/list-item-template.directive';
 import { AppExtensionService } from '../../extensions/extension.service';
 import { NavBarGroupRef } from '@alfresco/adf-extensions';
 import { Store } from '@ngrx/store';
@@ -28,8 +28,8 @@ import { takeUntil, distinctUntilChanged, map } from 'rxjs/operators';
 export class SidenavComponent implements OnInit, OnDestroy {
   @Input() mode: 'collapsed' | 'expanded' = 'expanded';
 
-  @ContentChild(ListItemTemplateDirective, { read: TemplateRef })
-  listItemTemplate;
+  // @ContentChild(ListItemTemplateDirective, { read: TemplateRef })
+  // listItemTemplate;
 
   @ContentChild(LinkItemTemplateDirective, { read: TemplateRef })
   linkItemTemplate;
@@ -57,6 +57,8 @@ export class SidenavComponent implements OnInit, OnDestroy {
         this.groups = this.extensions.getApplicationNavigation(
           this.extensions.navbar
         );
+
+        console.log(this.groups);
       });
   }
 
