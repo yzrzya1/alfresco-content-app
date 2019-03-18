@@ -36,28 +36,10 @@ import {
 })
 export class AppAuthGuard extends AuthGuardEcm {
   constructor(
-    private _auth: AuthenticationService,
-    private _router: Router,
-    private _config: AppConfigService
+    auth: AuthenticationService,
+    router: Router,
+    config: AppConfigService
   ) {
-    super(_auth, _router, _config);
-  }
-
-  checkLogin(redirectUrl: string): boolean {
-    const withCredentials = this._config.get<boolean>(
-      'auth.withCredentials',
-      false
-    );
-
-    if (withCredentials || this._auth.isEcmLoggedIn()) {
-      return true;
-    }
-
-    if (!this._auth.isOauth() || this.isOAuthWithoutSilentLogin()) {
-      this._auth.setRedirect({ provider: 'ECM', url: redirectUrl });
-      this._router.navigateByUrl('/login?redirectUrl=' + redirectUrl);
-    }
-
-    return false;
+    super(auth, router, config);
   }
 }
