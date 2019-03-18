@@ -52,7 +52,7 @@ import { PageComponent } from '../page.component';
 import { ContentApiService } from '../../services/content-api.service';
 import { AppExtensionService } from '../../extensions/extension.service';
 import { ContentManagementService } from '../../services/content-management.service';
-import { ContentActionRef, ViewerExtensionRef } from '@alfresco/adf-extensions';
+import { ContentActionRef } from '@alfresco/adf-extensions';
 import { SearchRequest } from '@alfresco/js-api';
 import { AppDataService } from '../../services/data.service';
 import { from } from 'rxjs';
@@ -82,7 +82,6 @@ export class PreviewComponent extends PageComponent
   nextNodeId: string;
   navigateMultiple = false;
   openWith: Array<ContentActionRef> = [];
-  contentExtensions: Array<ViewerExtensionRef> = [];
   showRightSide = false;
 
   constructor(
@@ -149,7 +148,6 @@ export class PreviewComponent extends PageComponent
     ]);
 
     this.openWith = this.extensions.openWithActions;
-    this.contentExtensions = this.extensions.viewerContentExtensions;
   }
 
   ngOnDestroy() {

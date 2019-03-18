@@ -36,7 +36,6 @@ import {
   NavigationState,
   ExtensionConfig,
   RuleEvaluator,
-  ViewerExtensionRef,
   ContentActionRef,
   ContentActionType,
   ExtensionLoaderService,
@@ -72,7 +71,6 @@ export class AppExtensionService implements AppRuleContext {
   toolbarActions: Array<ContentActionRef> = [];
   viewerToolbarActions: Array<ContentActionRef> = [];
   sharedLinkViewerToolbarActions: Array<ContentActionRef> = [];
-  viewerContentExtensions: Array<ViewerExtensionRef> = [];
   contextMenuActions: Array<ContentActionRef> = [];
   openWithActions: Array<ContentActionRef> = [];
   createActions: Array<ContentActionRef> = [];
