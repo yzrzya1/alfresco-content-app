@@ -45,24 +45,16 @@
     .adf-datatable-list .adf-datatable-row:last-child {
       border-bottom: 1px solid mat-color($foreground, text, 0.07);
     }
+
+    .adf-datatable--empty .adf-datatable-body .adf-datatable-row {
+      border: none;
+    }
   }
 
   // TODO: Review the code below with ADF 3.1
 
   .adf-data-table {
     border: none !important;
-
-    .adf-cell-container {
-      position: relative;
-    }
-
-    .adf-data-table-cell {
-      height: 56px;
-    }
-
-    .adf-datatable-table-cell-header:focus {
-      outline: none !important;
-    }
 
     .adf-data-table-cell,
     .adf-datatable-header {
