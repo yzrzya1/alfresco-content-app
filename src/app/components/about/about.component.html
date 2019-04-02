@@ -1,6 +1,8 @@
 <app-page-layout>
   <app-page-layout-content [scrollable]="true">
     <div class="main-content">
+      <ng-template #targetRef></ng-template>
+
       <article>
         <header>{{ 'application.name' | adfAppConfig }}</header>
         <p>{{ 'APP.ABOUT.VERSION' | translate }} {{ releaseVersion }}</p>

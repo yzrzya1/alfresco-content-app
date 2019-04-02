@@ -24,13 +24,21 @@
  */
 
 import { ExtensionRef } from '@alfresco/adf-extensions';
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import {
+  Component,
+  OnInit,
+  ViewEncapsulation,
+  Injector,
+  ViewChild,
+  ViewContainerRef
+} from '@angular/core';
 import { RepositoryInfo } from '@alfresco/js-api';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { AppExtensionService } from '../../extensions/extension.service';
 import { ContentApiService } from '../../services/content-api.service';
 import { version, dependencies } from '../../../../package.json';
+import { PluginLoaderService } from '../../extensions/plugin-loader/plugin-loader.service';
 @Component({
   selector: 'app-about',
   templateUrl: './about.component.html',
@@ -38,6 +46,8 @@ import { version, dependencies } from '../../../../package.json';
   host: { class: 'app-about' }
 })
 export class AboutComponent implements OnInit {
+  @ViewChild('targetRef', { read: ViewContainerRef }) vcRef: ViewContainerRef;
+
   repository: RepositoryInfo;
   releaseVersion = version;
   extensions$: Observable<ExtensionRef[]>;
@@ -47,7 +57,9 @@ export class AboutComponent implements OnInit {
 
   constructor(
     private contentApi: ContentApiService,
-    appExtensions: AppExtensionService
+    appExtensions: AppExtensionService,
+    private injector: Injector,
+    private pluginLoader: PluginLoaderService
   ) {
     this.extensions$ = appExtensions.references$;
   }
@@ -82,5 +94,18 @@ export class AboutComponent implements OnInit {
           });
         }
       });
+
+    this.loadPlugin('plugin1');
+  }
+
+  loadPlugin(pluginName: string) {
+    this.pluginLoader.load(pluginName).then(moduleFactory => {
+      const moduleRef = moduleFactory.create(this.injector);
+      const entryComponent = (moduleFactory.moduleType as any).entry;
+      const compFactory = moduleRef.componentFactoryResolver.resolveComponentFactory(
+        entryComponent
+      );
+      this.vcRef.createComponent(compFactory);
+    });
   }
 }

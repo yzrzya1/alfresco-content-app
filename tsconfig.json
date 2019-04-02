@@ -20,7 +20,9 @@
       ],
       "@alfresco/adf-office-services-ext/*": [
         "dist/@alfresco/adf-office-services-ext/*"
-      ]
+      ],
+      "shared": ["dist/shared"],
+      "shared/*": ["dist/shared/*"]
     },
     "resolveJsonModule": true
   },

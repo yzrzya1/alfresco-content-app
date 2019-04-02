@@ -24,7 +24,7 @@
  */
 
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { RouterModule, RouteReuseStrategy } from '@angular/router';
 import {
   BrowserAnimationsModule,
@@ -77,6 +77,9 @@ import { AppHeaderModule } from './components/header/header.module';
 import { AppNodeVersionModule } from './components/node-version/node-version.module';
 import { environment } from '../environments/environment';
 import { AppDataService } from './services/data.service';
+import { PluginLoaderService } from './extensions/plugin-loader/plugin-loader.service';
+import { ClientPluginLoaderService } from './extensions/plugin-loader/client-plugin-loader.service';
+import { PluginsConfigProvider } from './extensions/plugins-config.provider';
 
 @NgModule({
   imports: [
@@ -132,6 +135,18 @@ import { AppDataService } from './services/data.service';
         name: 'app',
         source: 'assets'
       }
+    },
+    { provide: PluginLoaderService, useClass: ClientPluginLoaderService },
+    PluginsConfigProvider,
+    {
+      provide: APP_INITIALIZER,
+      useFactory: (provider: PluginsConfigProvider) => () =>
+        provider
+          .loadConfig()
+          .toPromise()
+          .then(config => (provider.config = config)),
+      multi: true,
+      deps: [PluginsConfigProvider]
     }
   ],
   entryComponents: [
