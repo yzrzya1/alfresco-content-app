@@ -98,14 +98,13 @@ export class AboutComponent implements OnInit {
     this.loadPlugin('plugin1');
   }
 
-  loadPlugin(pluginName: string) {
-    this.pluginLoader.load(pluginName).then(moduleFactory => {
-      const moduleRef = moduleFactory.create(this.injector);
-      const entryComponent = (moduleFactory.moduleType as any).entry;
-      const compFactory = moduleRef.componentFactoryResolver.resolveComponentFactory(
-        entryComponent
-      );
-      this.vcRef.createComponent(compFactory);
-    });
+  async loadPlugin(pluginName: string) {
+    const moduleFactory = await this.pluginLoader.load(pluginName);
+    const moduleRef = moduleFactory.create(this.injector);
+    const entryComponent = (moduleFactory.moduleType as any).entry;
+    const compFactory = moduleRef.componentFactoryResolver.resolveComponentFactory(
+      entryComponent
+    );
+    this.vcRef.createComponent(compFactory);
   }
 }

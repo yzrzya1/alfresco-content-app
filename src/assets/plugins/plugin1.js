@@ -3,18 +3,25 @@
     ? (module.exports = e(
         require('ng.common'),
         require('shared'),
-        require('ng.core')
+        require('ng.core'),
+        require('adf.extensions')
       ))
     : 'function' == typeof define && define.amd
-    ? define(['ng.common', 'shared', 'ng.core'], e)
+    ? define(['ng.common', 'shared', 'ng.core', 'adf.extensions'], e)
     : 'object' == typeof exports
     ? (exports.plugin1 = e(
         require('ng.common'),
         require('shared'),
-        require('ng.core')
+        require('ng.core'),
+        require('adf.extensions')
       ))
-    : (n.plugin1 = e(n['ng.common'], n.shared, n['ng.core']));
-})('undefined' != typeof self ? self : this, function(n, e, l) {
+    : (n.plugin1 = e(
+        n['ng.common'],
+        n.shared,
+        n['ng.core'],
+        n['adf.extensions']
+      ));
+})('undefined' != typeof self ? self : this, function(n, e, l, t) {
   return (function(n) {
     var e = {};
     function l(t) {
@@ -83,28 +90,34 @@
     vOrQ: function(n, e) {
       n.exports = l;
     },
+    'yX+R': function(n, e) {
+      n.exports = t;
+    },
     zUnb: function(n, e, l) {
       'use strict';
       l.r(e);
-      var t = (function() {
+      var t = l('yX+R'),
+        u = (function() {
           return function() {
             this.x = !1;
           };
         })(),
-        u = (function() {
-          function n() {}
-          return (n.entry = t), n;
+        o = (function() {
+          function n(n) {
+            console.log(n);
+          }
+          return (n.entry = u), n;
         })(),
-        o = l('vOrQ'),
-        r = l('0S4P'),
-        i = l('cfyg'),
-        d = o['\u0275crt']({ encapsulation: 2, styles: [], data: {} });
-      function c(n) {
-        return o['\u0275vid'](
+        r = l('vOrQ'),
+        i = l('0S4P'),
+        d = l('cfyg'),
+        c = r['\u0275crt']({ encapsulation: 2, styles: [], data: {} });
+      function a(n) {
+        return r['\u0275vid'](
           0,
           [
             (n()(),
-            o['\u0275eld'](
+            r['\u0275eld'](
               0,
               0,
               null,
@@ -118,18 +131,18 @@
               null,
               null
             )),
-            (n()(), o['\u0275ted'](-1, null, ['Hidden text']))
+            (n()(), r['\u0275ted'](-1, null, ['Hidden text']))
           ],
           null,
           null
         );
       }
-      function a(n) {
-        return o['\u0275vid'](
+      function f(n) {
+        return r['\u0275vid'](
           0,
           [
             (n()(),
-            o['\u0275eld'](
+            r['\u0275eld'](
               0,
               0,
               null,
@@ -143,20 +156,20 @@
               null,
               null
             )),
-            (n()(), o['\u0275ted'](-1, null, ['Plugin 1'])),
-            (n()(), o['\u0275and'](16777216, null, null, 1, null, c)),
-            o['\u0275did'](
+            (n()(), r['\u0275ted'](-1, null, ['Plugin 1'])),
+            (n()(), r['\u0275and'](16777216, null, null, 1, null, a)),
+            r['\u0275did'](
               3,
               16384,
               null,
               0,
-              r.NgIf,
-              [o.ViewContainerRef, o.TemplateRef],
+              i.NgIf,
+              [r.ViewContainerRef, r.TemplateRef],
               { ngIf: [0, 'ngIf'] },
               null
             ),
             (n()(),
-            o['\u0275eld'](
+            r['\u0275eld'](
               4,
               0,
               null,
@@ -171,13 +184,13 @@
                   u = n.component;
                 return 'click' === e && (t = 0 != (u.x = !u.x) && t), t;
               },
-              i['View_\u0275a_0'],
-              i['RenderType_\u0275a']
+              d['View_\u0275a_0'],
+              d['RenderType_\u0275a']
             )),
-            o['\u0275did'](5, 49152, null, 0, i['\u0275a'], [], null, null),
-            (n()(), o['\u0275ted'](-1, 0, ['Shared Button Example'])),
+            r['\u0275did'](5, 49152, null, 0, d['\u0275a'], [], null, null),
+            (n()(), r['\u0275ted'](-1, 0, ['Shared Button Example'])),
             (n()(),
-            o['\u0275eld'](
+            r['\u0275eld'](
               7,
               0,
               null,
@@ -188,12 +201,12 @@
               null,
               null,
               null,
-              i['View_\u0275c_0'],
-              i['RenderType_\u0275c']
+              d['View_\u0275c_0'],
+              d['RenderType_\u0275c']
             )),
-            o['\u0275did'](8, 49152, null, 0, i['\u0275c'], [], null, null),
+            r['\u0275did'](8, 49152, null, 0, d['\u0275c'], [], null, null),
             (n()(),
-            o['\u0275eld'](
+            r['\u0275eld'](
               9,
               0,
               null,
@@ -204,22 +217,22 @@
               [[8, 'hidden', 0]],
               null,
               null,
-              i['View_\u0275b_0'],
-              i['RenderType_\u0275b']
+              d['View_\u0275b_0'],
+              d['RenderType_\u0275b']
             )),
-            o['\u0275did'](
+            r['\u0275did'](
               10,
               49152,
               null,
               0,
-              i['\u0275b'],
-              [i['\u0275c']],
+              d['\u0275b'],
+              [d['\u0275c']],
               { title: [0, 'title'] },
               null
             ),
-            (n()(), o['\u0275ted'](-1, 0, [' Tab 1 contents '])),
+            (n()(), r['\u0275ted'](-1, 0, [' Tab 1 contents '])),
             (n()(),
-            o['\u0275eld'](
+            r['\u0275eld'](
               12,
               0,
               null,
@@ -230,22 +243,22 @@
               [[8, 'hidden', 0]],
               null,
               null,
-              i['View_\u0275b_0'],
-              i['RenderType_\u0275b']
+              d['View_\u0275b_0'],
+              d['RenderType_\u0275b']
             )),
-            o['\u0275did'](
+            r['\u0275did'](
               13,
               49152,
               null,
               0,
-              i['\u0275b'],
-              [i['\u0275c']],
+              d['\u0275b'],
+              [d['\u0275c']],
               { title: [0, 'title'] },
               null
             ),
-            (n()(), o['\u0275ted'](-1, 0, [' Tab 2 contents '])),
+            (n()(), r['\u0275ted'](-1, 0, [' Tab 2 contents '])),
             (n()(),
-            o['\u0275eld'](
+            r['\u0275eld'](
               15,
               0,
               null,
@@ -256,20 +269,20 @@
               [[8, 'hidden', 0]],
               null,
               null,
-              i['View_\u0275b_0'],
-              i['RenderType_\u0275b']
+              d['View_\u0275b_0'],
+              d['RenderType_\u0275b']
             )),
-            o['\u0275did'](
+            r['\u0275did'](
               16,
               49152,
               null,
               0,
-              i['\u0275b'],
-              [i['\u0275c']],
+              d['\u0275b'],
+              [d['\u0275c']],
               { title: [0, 'title'] },
               null
             ),
-            (n()(), o['\u0275ted'](-1, 0, [' Tab 3 contents ']))
+            (n()(), r['\u0275ted'](-1, 0, [' Tab 3 contents ']))
           ],
           function(n, e) {
             n(e, 3, 0, e.component.x),
@@ -278,18 +291,18 @@
               n(e, 16, 0, 'Tab 3');
           },
           function(n, e) {
-            n(e, 9, 0, o['\u0275nov'](e, 10).hidden),
-              n(e, 12, 0, o['\u0275nov'](e, 13).hidden),
-              n(e, 15, 0, o['\u0275nov'](e, 16).hidden);
+            n(e, 9, 0, r['\u0275nov'](e, 10).hidden),
+              n(e, 12, 0, r['\u0275nov'](e, 13).hidden),
+              n(e, 15, 0, r['\u0275nov'](e, 16).hidden);
           }
         );
       }
-      function f(n) {
-        return o['\u0275vid'](
+      function p(n) {
+        return r['\u0275vid'](
           0,
           [
             (n()(),
-            o['\u0275eld'](
+            r['\u0275eld'](
               0,
               0,
               null,
@@ -300,40 +313,40 @@
               null,
               null,
               null,
-              a,
-              d
+              f,
+              c
             )),
-            o['\u0275did'](1, 49152, null, 0, t, [], null, null)
+            r['\u0275did'](1, 49152, null, 0, u, [], null, null)
           ],
           null,
           null
         );
       }
-      var p = o['\u0275ccf']('app-plugin-1', t, f, {}, {}, []),
-        s = o['\u0275cmf'](u, [], function(n) {
-          return o['\u0275mod']([
-            o['\u0275mpd'](
+      var s = r['\u0275ccf']('app-plugin-1', u, p, {}, {}, []),
+        b = r['\u0275cmf'](o, [], function(n) {
+          return r['\u0275mod']([
+            r['\u0275mpd'](
               512,
-              o.ComponentFactoryResolver,
-              o['\u0275CodegenComponentFactoryResolver'],
-              [[8, [p]], [3, o.ComponentFactoryResolver], o.NgModuleRef]
+              r.ComponentFactoryResolver,
+              r['\u0275CodegenComponentFactoryResolver'],
+              [[8, [s]], [3, r.ComponentFactoryResolver], r.NgModuleRef]
             ),
-            o['\u0275mpd'](4608, r.NgLocalization, r.NgLocaleLocalization, [
-              o.LOCALE_ID,
-              [2, r['\u0275angular_packages_common_common_a']]
+            r['\u0275mpd'](4608, i.NgLocalization, i.NgLocaleLocalization, [
+              r.LOCALE_ID,
+              [2, i['\u0275angular_packages_common_common_a']]
             ]),
-            o['\u0275mpd'](1073742336, r.CommonModule, r.CommonModule, []),
-            o['\u0275mpd'](1073742336, i.SharedModule, i.SharedModule, []),
-            o['\u0275mpd'](1073742336, u, u, [])
+            r['\u0275mpd'](1073742336, i.CommonModule, i.CommonModule, []),
+            r['\u0275mpd'](1073742336, d.SharedModule, d.SharedModule, []),
+            r['\u0275mpd'](1073742336, o, o, [t.ExtensionService])
           ]);
         });
       l.d(e, 'Plugin1Module', function() {
-        return u;
+        return o;
       }),
         l.d(e, 'Plugin1ModuleNgFactory', function() {
-          return s;
+          return b;
         }),
-        (e.default = s);
+        (e.default = b);
     }
   });
 });

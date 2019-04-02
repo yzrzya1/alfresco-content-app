@@ -27,6 +27,7 @@ class PluginBuilder extends build_angular_1.BrowserBuilder {
       '@angular/common': 'ng.common',
       '@angular/forms': 'ng.forms',
       '@angular/router': 'ng.router',
+      '@alfresco/adf-extensions': 'adf.extensions',
       tslib: 'tslib'
       // put here other common dependencies
     };

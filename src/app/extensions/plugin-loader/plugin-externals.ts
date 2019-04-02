@@ -4,6 +4,7 @@ import * as forms from '@angular/forms';
 import * as router from '@angular/router';
 import * as rxjs from 'rxjs';
 import * as tslib from 'tslib';
+import * as extensions from '@alfresco/adf-extensions';
 
 export const PLUGIN_EXTERNALS_MAP = {
   'ng.core': core,
@@ -11,5 +12,6 @@ export const PLUGIN_EXTERNALS_MAP = {
   'ng.forms': forms,
   'ng.router': router,
   rxjs,
-  tslib
+  tslib,
+  'adf.extensions': extensions
 };
