@@ -1,7 +1,8 @@
 {
   "plugin1": {
-    "name": "Plugin 2",
+    "name": "Plugin 1",
     "path": "/assets/plugins/plugin1.js",
+    "_path": "http://localhost:4200/alfresco/api/-default-/public/alfresco/versions/1/shared-links/C3IjlC2nS32gbi7WLA5LkA/content?attachment=false",
     "deps": ["shared"]
   },
   "plugin2": {
