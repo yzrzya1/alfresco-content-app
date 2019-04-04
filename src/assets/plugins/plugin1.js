@@ -21,19 +21,19 @@
         n['ng.core'],
         n['adf.extensions']
       ));
-})('undefined' != typeof self ? self : this, function(n, e, l, t) {
+})('undefined' != typeof self ? self : this, function(n, e, l, u) {
   return (function(n) {
     var e = {};
-    function l(t) {
-      if (e[t]) return e[t].exports;
-      var u = (e[t] = { i: t, l: !1, exports: {} });
-      return n[t].call(u.exports, u, u.exports, l), (u.l = !0), u.exports;
+    function l(u) {
+      if (e[u]) return e[u].exports;
+      var t = (e[u] = { i: u, l: !1, exports: {} });
+      return n[u].call(t.exports, t, t.exports, l), (t.l = !0), t.exports;
     }
     return (
       (l.m = n),
       (l.c = e),
-      (l.d = function(n, e, t) {
-        l.o(n, e) || Object.defineProperty(n, e, { enumerable: !0, get: t });
+      (l.d = function(n, e, u) {
+        l.o(n, e) || Object.defineProperty(n, e, { enumerable: !0, get: u });
       }),
       (l.r = function(n) {
         'undefined' != typeof Symbol &&
@@ -44,21 +44,21 @@
       (l.t = function(n, e) {
         if ((1 & e && (n = l(n)), 8 & e)) return n;
         if (4 & e && 'object' == typeof n && n && n.__esModule) return n;
-        var t = Object.create(null);
+        var u = Object.create(null);
         if (
-          (l.r(t),
-          Object.defineProperty(t, 'default', { enumerable: !0, value: n }),
+          (l.r(u),
+          Object.defineProperty(u, 'default', { enumerable: !0, value: n }),
           2 & e && 'string' != typeof n)
         )
-          for (var u in n)
+          for (var t in n)
             l.d(
-              t,
               u,
+              t,
               function(e) {
                 return n[e];
-              }.bind(null, u)
+              }.bind(null, t)
             );
-        return t;
+        return u;
       }),
       (l.n = function(n) {
         var e =
@@ -91,33 +91,36 @@
       n.exports = l;
     },
     'yX+R': function(n, e) {
-      n.exports = t;
+      n.exports = u;
     },
     zUnb: function(n, e, l) {
       'use strict';
       l.r(e);
-      var t = l('yX+R'),
-        u = (function() {
+      var u = l('yX+R'),
+        t = (function() {
           return function() {
             this.x = !1;
           };
         })(),
         o = (function() {
-          function n(n) {
-            console.log(n);
-          }
-          return (n.entry = u), n;
+          return function() {};
         })(),
-        r = l('vOrQ'),
-        i = l('0S4P'),
-        d = l('cfyg'),
-        c = r['\u0275crt']({ encapsulation: 2, styles: [], data: {} });
-      function a(n) {
-        return r['\u0275vid'](
+        r = (function() {
+          function n(n) {
+            n.setComponents({ 'plugin1.main': t }), console.log(n);
+          }
+          return (n.entry = t), (n.component2 = o), n;
+        })(),
+        i = l('vOrQ'),
+        d = l('0S4P'),
+        c = l('cfyg'),
+        a = i['\u0275crt']({ encapsulation: 2, styles: [], data: {} });
+      function f(n) {
+        return i['\u0275vid'](
           0,
           [
             (n()(),
-            r['\u0275eld'](
+            i['\u0275eld'](
               0,
               0,
               null,
@@ -131,18 +134,18 @@
               null,
               null
             )),
-            (n()(), r['\u0275ted'](-1, null, ['Hidden text']))
+            (n()(), i['\u0275ted'](-1, null, ['Hidden text']))
           ],
           null,
           null
         );
       }
-      function f(n) {
-        return r['\u0275vid'](
+      function p(n) {
+        return i['\u0275vid'](
           0,
           [
             (n()(),
-            r['\u0275eld'](
+            i['\u0275eld'](
               0,
               0,
               null,
@@ -156,20 +159,20 @@
               null,
               null
             )),
-            (n()(), r['\u0275ted'](-1, null, ['Plugin 1'])),
-            (n()(), r['\u0275and'](16777216, null, null, 1, null, a)),
-            r['\u0275did'](
+            (n()(), i['\u0275ted'](-1, null, ['Plugin 1'])),
+            (n()(), i['\u0275and'](16777216, null, null, 1, null, f)),
+            i['\u0275did'](
               3,
               16384,
               null,
               0,
-              i.NgIf,
-              [r.ViewContainerRef, r.TemplateRef],
+              d.NgIf,
+              [i.ViewContainerRef, i.TemplateRef],
               { ngIf: [0, 'ngIf'] },
               null
             ),
             (n()(),
-            r['\u0275eld'](
+            i['\u0275eld'](
               4,
               0,
               null,
@@ -180,17 +183,17 @@
               null,
               [[null, 'click']],
               function(n, e, l) {
-                var t = !0,
-                  u = n.component;
-                return 'click' === e && (t = 0 != (u.x = !u.x) && t), t;
+                var u = !0,
+                  t = n.component;
+                return 'click' === e && (u = 0 != (t.x = !t.x) && u), u;
               },
-              d['View_\u0275a_0'],
-              d['RenderType_\u0275a']
+              c['View_\u0275a_0'],
+              c['RenderType_\u0275a']
             )),
-            r['\u0275did'](5, 49152, null, 0, d['\u0275a'], [], null, null),
-            (n()(), r['\u0275ted'](-1, 0, ['Shared Button Example'])),
+            i['\u0275did'](5, 49152, null, 0, c['\u0275a'], [], null, null),
+            (n()(), i['\u0275ted'](-1, 0, ['Shared Button Example'])),
             (n()(),
-            r['\u0275eld'](
+            i['\u0275eld'](
               7,
               0,
               null,
@@ -201,12 +204,12 @@
               null,
               null,
               null,
-              d['View_\u0275c_0'],
-              d['RenderType_\u0275c']
+              c['View_\u0275c_0'],
+              c['RenderType_\u0275c']
             )),
-            r['\u0275did'](8, 49152, null, 0, d['\u0275c'], [], null, null),
+            i['\u0275did'](8, 49152, null, 0, c['\u0275c'], [], null, null),
             (n()(),
-            r['\u0275eld'](
+            i['\u0275eld'](
               9,
               0,
               null,
@@ -217,22 +220,22 @@
               [[8, 'hidden', 0]],
               null,
               null,
-              d['View_\u0275b_0'],
-              d['RenderType_\u0275b']
+              c['View_\u0275b_0'],
+              c['RenderType_\u0275b']
             )),
-            r['\u0275did'](
+            i['\u0275did'](
               10,
               49152,
               null,
               0,
-              d['\u0275b'],
-              [d['\u0275c']],
+              c['\u0275b'],
+              [c['\u0275c']],
               { title: [0, 'title'] },
               null
             ),
-            (n()(), r['\u0275ted'](-1, 0, [' Tab 1 contents '])),
+            (n()(), i['\u0275ted'](-1, 0, [' Tab 1 contents '])),
             (n()(),
-            r['\u0275eld'](
+            i['\u0275eld'](
               12,
               0,
               null,
@@ -243,22 +246,22 @@
               [[8, 'hidden', 0]],
               null,
               null,
-              d['View_\u0275b_0'],
-              d['RenderType_\u0275b']
+              c['View_\u0275b_0'],
+              c['RenderType_\u0275b']
             )),
-            r['\u0275did'](
+            i['\u0275did'](
               13,
               49152,
               null,
               0,
-              d['\u0275b'],
-              [d['\u0275c']],
+              c['\u0275b'],
+              [c['\u0275c']],
               { title: [0, 'title'] },
               null
             ),
-            (n()(), r['\u0275ted'](-1, 0, [' Tab 2 contents '])),
+            (n()(), i['\u0275ted'](-1, 0, [' Tab 2 contents '])),
             (n()(),
-            r['\u0275eld'](
+            i['\u0275eld'](
               15,
               0,
               null,
@@ -269,20 +272,20 @@
               [[8, 'hidden', 0]],
               null,
               null,
-              d['View_\u0275b_0'],
-              d['RenderType_\u0275b']
+              c['View_\u0275b_0'],
+              c['RenderType_\u0275b']
             )),
-            r['\u0275did'](
+            i['\u0275did'](
               16,
               49152,
               null,
               0,
-              d['\u0275b'],
-              [d['\u0275c']],
+              c['\u0275b'],
+              [c['\u0275c']],
               { title: [0, 'title'] },
               null
             ),
-            (n()(), r['\u0275ted'](-1, 0, [' Tab 3 contents ']))
+            (n()(), i['\u0275ted'](-1, 0, [' Tab 3 contents ']))
           ],
           function(n, e) {
             n(e, 3, 0, e.component.x),
@@ -291,18 +294,18 @@
               n(e, 16, 0, 'Tab 3');
           },
           function(n, e) {
-            n(e, 9, 0, r['\u0275nov'](e, 10).hidden),
-              n(e, 12, 0, r['\u0275nov'](e, 13).hidden),
-              n(e, 15, 0, r['\u0275nov'](e, 16).hidden);
+            n(e, 9, 0, i['\u0275nov'](e, 10).hidden),
+              n(e, 12, 0, i['\u0275nov'](e, 13).hidden),
+              n(e, 15, 0, i['\u0275nov'](e, 16).hidden);
           }
         );
       }
-      function p(n) {
-        return r['\u0275vid'](
+      function s(n) {
+        return i['\u0275vid'](
           0,
           [
             (n()(),
-            r['\u0275eld'](
+            i['\u0275eld'](
               0,
               0,
               null,
@@ -313,40 +316,92 @@
               null,
               null,
               null,
-              f,
-              c
+              p,
+              a
             )),
-            r['\u0275did'](1, 49152, null, 0, u, [], null, null)
+            i['\u0275did'](1, 49152, null, 0, t, [], null, null)
           ],
           null,
           null
         );
       }
-      var s = r['\u0275ccf']('app-plugin-1', u, p, {}, {}, []),
-        b = r['\u0275cmf'](o, [], function(n) {
-          return r['\u0275mod']([
-            r['\u0275mpd'](
+      var b = i['\u0275ccf']('app-plugin-1', t, s, {}, {}, []),
+        m = i['\u0275crt']({ encapsulation: 2, styles: [], data: {} });
+      function g(n) {
+        return i['\u0275vid'](
+          0,
+          [
+            (n()(),
+            i['\u0275eld'](
+              0,
+              0,
+              null,
+              null,
+              1,
+              'h1',
+              [],
+              null,
+              null,
+              null,
+              null,
+              null
+            )),
+            (n()(), i['\u0275ted'](-1, null, ['Your ad could be here...']))
+          ],
+          null,
+          null
+        );
+      }
+      function y(n) {
+        return i['\u0275vid'](
+          0,
+          [
+            (n()(),
+            i['\u0275eld'](
+              0,
+              0,
+              null,
+              null,
+              1,
+              'app-plugin-1-second',
+              [],
+              null,
+              null,
+              null,
+              g,
+              m
+            )),
+            i['\u0275did'](1, 49152, null, 0, o, [], null, null)
+          ],
+          null,
+          null
+        );
+      }
+      var v = i['\u0275ccf']('app-plugin-1-second', o, y, {}, {}, []),
+        _ = i['\u0275cmf'](r, [], function(n) {
+          return i['\u0275mod']([
+            i['\u0275mpd'](
               512,
-              r.ComponentFactoryResolver,
-              r['\u0275CodegenComponentFactoryResolver'],
-              [[8, [s]], [3, r.ComponentFactoryResolver], r.NgModuleRef]
+              i.ComponentFactoryResolver,
+              i['\u0275CodegenComponentFactoryResolver'],
+              [[8, [b, v]], [3, i.ComponentFactoryResolver], i.NgModuleRef]
             ),
-            r['\u0275mpd'](4608, i.NgLocalization, i.NgLocaleLocalization, [
-              r.LOCALE_ID,
-              [2, i['\u0275angular_packages_common_common_a']]
+            i['\u0275mpd'](4608, d.NgLocalization, d.NgLocaleLocalization, [
+              i.LOCALE_ID,
+              [2, d['\u0275angular_packages_common_common_a']]
             ]),
-            r['\u0275mpd'](1073742336, i.CommonModule, i.CommonModule, []),
-            r['\u0275mpd'](1073742336, d.SharedModule, d.SharedModule, []),
-            r['\u0275mpd'](1073742336, o, o, [t.ExtensionService])
+            i['\u0275mpd'](1073742336, d.CommonModule, d.CommonModule, []),
+            i['\u0275mpd'](1073742336, c.SharedModule, c.SharedModule, []),
+            i['\u0275mpd'](1073742336, r, r, [u.ExtensionService])
           ]);
         });
       l.d(e, 'Plugin1Module', function() {
-        return o;
+        return r;
       }),
         l.d(e, 'Plugin1ModuleNgFactory', function() {
-          return b;
+          return _;
         }),
-        (e.default = b);
+        (e.default = _);
     }
   });
 });

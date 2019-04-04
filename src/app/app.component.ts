@@ -53,6 +53,8 @@ import { ContentApiService } from './services/content-api.service';
 import { DiscoveryEntry } from '@alfresco/js-api';
 import { AppService } from './services/app.service';
 import { Subject } from 'rxjs';
+import { AppLayoutComponent } from './components/layout/app-layout/app-layout.component';
+import { DynamicPageComponent } from './extensions/dynamic-page.component';
 
 @Component({
   selector: 'app-root',
@@ -129,6 +131,7 @@ export class AppComponent implements OnInit, OnDestroy {
         if (isReady) {
           this.loadRepositoryStatus();
           this.loadUserProfile();
+          this.setPluginRoutes();
           // todo: load external auth-enabled plugins here
         }
       });
@@ -197,5 +200,30 @@ export class AppComponent implements OnInit, OnDestroy {
     }
 
     this.store.dispatch(new SnackbarErrorAction(message));
+  }
+
+  async setPluginRoutes() {
+    this.router.config.unshift({
+      path: 'test',
+      component: AppLayoutComponent,
+      children: [
+        {
+          path: '1',
+          component: DynamicPageComponent,
+          data: {
+            pluginId: 'plugin1',
+            componentId: 'entry'
+          }
+        },
+        {
+          path: '2',
+          component: DynamicPageComponent,
+          data: {
+            pluginId: 'plugin1',
+            componentId: 'component2'
+          }
+        }
+      ]
+    });
   }
 }

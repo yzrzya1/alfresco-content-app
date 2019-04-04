@@ -52,13 +52,16 @@ import {
   TrashcanNameColumnComponent,
   LibraryRoleColumnComponent
 } from '@alfresco/adf-content-services';
+import { DynamicPageComponent } from './dynamic-page.component';
 
 export function setupExtensions(service: AppExtensionService): Function {
   return () => service.load();
 }
 
 @NgModule({
-  imports: [CommonModule, CoreModule.forChild(), ExtensionsModule]
+  imports: [CommonModule, CoreModule.forChild(), ExtensionsModule],
+  declarations: [DynamicPageComponent],
+  entryComponents: [DynamicPageComponent]
 })
 export class CoreExtensionsModule {
   static forRoot(): ModuleWithProviders {
