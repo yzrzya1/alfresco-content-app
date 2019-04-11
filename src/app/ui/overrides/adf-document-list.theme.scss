@@ -26,10 +26,10 @@
 
         .adf-datatable-cell-value {
           position: static;
-          max-width: 35vw;
+          width: auto;
+          max-width: calc(78vw - 500px);
 
           @include layout-bp(lt-sm) {
-            position: absolute;
             max-width: 85vw;
           }
         }
@@ -37,8 +37,9 @@
     }
 
     .adf-datatable-cell--image {
-      max-width: $document-list-thumbnail-width;
+      min-width: $document-list-thumbnail-width;
       width: $document-list-thumbnail-width;
+      max-width: $document-list-thumbnail-width;
     }
   }
 
@@ -59,13 +60,17 @@
     .adf-datatable-cell {
       padding: 0 2px;
       box-sizing: border-box;
+      min-width: 100px;
+
+      &:first-child {
+        min-width: $document-list-thumbnail-width;
+      }
 
       &:focus {
         outline: none !important;
       }
 
       .adf-datatable-cell-value {
-        width: 100% !important;
         white-space: nowrap;
       }
     }
